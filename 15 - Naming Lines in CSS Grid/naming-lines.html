@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
-  <title>Grid Template Areas: Line Names from Grid Areas!</title>
+  <title>Naming Lines in CSS Grid!</title>
 </head>
 
 <body>
@@ -40,21 +40,23 @@
     <div class="item item28">28</div>
     <div class="item item29">29</div>
     <div class="item item30">30</div>
+    <div class="item item31">31</div>
   </div>
 
   <style>
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-areas: 
-      "💩 💩 💩 💩 🌮 🌮 🌮 🌮"
-      "💩 💩 💩 💩 🌮 🌮 🌮 🌮"
-      "💩 💩 💩 💩 🌮 🌮 🌮 🌮"
-      "💩 💩 💩 💩 🌮 🌮 🌮 🌮";
+      grid-template-columns: 
+        [site-start] 1fr [content-start] 10fr [content-end] 1fr [site-end];
+      grid-template-rows: 
+        [content-top] repeat(15, auto) [content-bottom];
     }
-    .item5{
-      grid-column: 💩 / 🌮;
-      grid-row-end: 🌮;
+
+    .item6 {
+      background-color: blueviolet;
+      grid-column: content-start / content-end;
+      grid-row: content-top / content-bottom;
     }
   </style>
 </body>
